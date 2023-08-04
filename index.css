@@ -1,0 +1,164 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: hsl(36, 100%, 99%);
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.main-container{
+    width: 100%;
+    height: 90vh;
+    margin: 0 10%;    
+}
+.nav-bar{
+    display: flex;
+    justify-content: space-between;
+    margin: 2% 0;    
+}
+.nav-bar ul{
+    display: flex;
+    justify-content: flex-end;
+    align-content: center;
+}
+.nav-bar ul li{
+    margin: 1rem;
+    list-style: none;
+}
+.icon-menu{
+    display: none;
+}
+.inner-container{
+    display: grid;
+    grid-template-columns:repeat(3,1fr);
+    grid-template-rows: repeat(3,30%);
+    grid-template-areas: "one one two"
+                        "three four two" 
+                        "five six seven";
+    gap: 20px;
+}
+#check{
+    display: none;
+ }
+@media screen and (max-width:765px){
+    .nav-bar ul{
+        display: block;
+        position: fixed;
+        width: 50%;
+        left: 250px;
+        height: 100vh;
+        background-color: #fff;
+       
+    }
+    .icon-menu{
+        display: contents;
+    }
+
+    #check:checked ~ .nav-bar ul{
+        right: 0;
+     
+    }
+    #check:checked ~ label #open{
+        right: 250px;
+        opacity: 0;
+        pointer-events: all;
+    }
+    #check:checked ~ label #close{
+        right: 250px;
+        opacity: 0;
+        pointer-events: all;
+    }
+    .inner-container{
+        display: block;
+        margin: 5%;
+    }
+}
+.card-1{
+    grid-area: one;
+}
+.card-1 img{
+    width: 100%;
+    height: 100%;
+}
+.card-2{
+    grid-area: two;
+    background-color: hsl(240, 100%, 5%);
+    color: #fff;
+    padding: 10%;
+}
+.card-2 h2{
+    color: hsl(35, 77%, 62%);
+    margin: 5% 0;
+}
+.card-2 h3{
+    font-size: 20px;
+    margin: 3% 0;
+    font-weight: 800;
+}
+.card-2 p{
+    font-size: 15px;
+    color: hsl(233, 8%, 79%);
+}
+.card-3{
+    grid-area: three;
+    font-size: 30px;
+}
+.card-4{
+    grid-area: four;    
+    color:  hsl(236, 13%, 42%);
+}
+.card-4 p{
+    line-height: 1.5rem;
+    margin: 5% 0;
+}
+.card-4 button{
+    background-color:  hsl(5, 85%, 63%);
+    padding: 10px;
+    width: 40%;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+}
+.img{
+    padding: 5%;
+    width: 50%;
+    height: 70%;
+}
+.card-5{
+    grid-area: five;
+    display: flex;
+    justify-content: space-between;
+}
+.spans{
+    text-align: left;
+    color:   hsl(233, 8%, 79%);
+}
+.spans h1{
+    margin: 5% 0;
+}
+.spans h3{
+    color: hsl(240, 100%, 5%);
+    margin: 5% 0;
+}
+.spans p{
+    font-size: 18px;
+}
+.card-6{
+    grid-area: six;
+    display: flex;
+    justify-content: space-between;
+}
+.card-7{
+    grid-area: seven;
+    display: flex;
+    justify-content: space-between;
+}
+hr{
+    margin: 10% 0;
+}
